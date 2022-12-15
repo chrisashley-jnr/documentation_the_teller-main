@@ -1,0 +1,1786 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theteller API Documentation</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="tabs.css">
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="logo-white.png" alt="logo" class="logo">
+            <a href="#">
+                <h3>Go to Homepage</h3>
+            </a>
+        </div>
+        <div class="content-container">
+            <div class="menubar">
+                <ul class="menu-list">
+                    <p class="big-text">Overview</p>
+                    <li> <a href="#section_1"> Setting up an Account on Theteller</a></li>
+                    <li><a href="#section_2">Adding Theteller to your website</a> </li>
+                </ul>
+                <ul class="menu-list">
+                    <p class="big-text">Integration Quick Start</p>
+                    <li><a href="#section_3">Theteller Standard Checkout</a> </li>
+                    <li><a href="#section_4">Theteller inline JS</a> </li>
+                    <li><a href="#section_5">Checking Payment Response</a> </li>
+                </ul>
+                <ul class="menu-list">
+                    <p class="big-text">Fund Transfer</p>
+                    <li><a href="#section_6">To Mobile Money</a> </li>
+                    <li><a href="#section_7">To Bank Account</a> </li>
+                </ul>
+                <ul class="menu-list">
+                    <p class="big-text">Payments</p>
+                    <li><a href="#section_8">Card Payments</a> </li>
+                    <li><a href="#section_9">Card Reversal</a> </li>
+                    <li><a href="#section_10">Handling VBV</a> </li>
+                    <li><a href="#section_11">Mobile Money Payments</a> </li>
+                </ul>
+                <ul class="menu-list">
+                    <p class="big-text">TheTeller Overview</p>
+                    <li><a href="#section_12">API Keys</a> </li>
+                    <li><a href="#section_13">Plugins</a> </li>
+                    <li><a href="#section_14">Handling VBV</a> </li>
+                    <li><a href="#section_15">Test Cards</a> </li>
+                    <li><a href="#section_16">Theteller Response Code</a></li>
+                </ul>
+            </div>
+            <div class="content">
+                <div class="overview" id="section_1">
+                    <h1>Overview</h1>
+                    <p class="sub-text">To start integrating with theTeller API, you need a theTeller merchant account.
+                        See how to setup here: Setting up on theTeller.<br>
+                        TheTeller API helps you create any type of payments flow from payment acceptance, e-commerce,
+                        recurring billing and a whole lots more.
+                    </p>
+                    <div class="cards">
+                        <div class="card-wrap">
+                            <div class="card">
+                                <img src="/gifs/browser (1).gif" alt="browser" width="70" height="70">
+                                <p class="card-text">On your website</p>
+                            </div>
+                            <a href="#">
+                                <p class="small-text">View Plugins</p>
+                            </a>
+                        </div>
+                        <div class="card-wrap">
+                            <div class="card">
+                                <img src="/gifs/shopping-cart (1).gif" alt="shopping" width="70" height="70">
+                                <p class="card-text">E-commerce</p>
+                            </div>
+                            <a href="#">
+                                <p class="small-text">View Plugins</p>
+                            </a>
+                        </div>
+                        <div class="card-wrap">
+                            <div class="card">
+                                <img src="/gifs/smartphone (1).gif" alt="mobile" width="70" height="70">
+                                <p class="card-text">Mobile Apps</p>
+                            </div>
+                            <a href="#">
+                                <p class="small-text">View APKs</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <p class="line"></p>
+                <h5 class="live">Live Endpoint: <strong>https://prod.theteller.net</strong><br><br> Test Endpoint:
+                    <strong>https://test.theteller.net</strong></h5>
+                <h5 class="live"> </h5>
+                <p class="line"></p>
+                <br>
+                <div class="overview" id="section_2">
+                    <h1>Setting up an Account on Theteller</h1>
+                    <p class="sub-text">Setting up a merchant account is as easy as possible, simply sign up <a
+                            href="#">Signup Here.</a>
+                        When you complete the signup form a verification mail will be sent to you to verify your
+                        email.<br>
+                        Upon successful verification, our support team will contact you via email or phone call.
+                    </p>
+                    <span>
+                        <h4>Test Credentials</h4>
+                        <p class="line-one"></p>
+                    </span>
+                    <p class="sub-text">Test API credentials will be created for your account to facilitate the
+                        integration phase. you can find your API credentials on your merchant dashboard when you sign
+                        in.
+                    </p>
+                    <span>
+                        <h4>Live Credentials</h4>
+                        <p class="line-one"></p>
+                    </span>
+                    <p class="sub-text">To go live simply contact our support team. <a href="#">Contact Support</a></p>
+                </div>
+                <br>
+
+                <div class="overview" id="section_3">
+                    <h1>Adding Theteller to your website</h1>
+                    <span>
+                        <h4>How Our New Theteller Inline JS Modal looks</h4>
+                        <p class="line-two"></p>
+                    </span>
+                    <p class="sub-text">The Theteller inline JS code method is the easiest way to start accepting
+                        payment on your web applications. It offers a secure and convenient flow for users. The best
+                        part is that payment is done on your page,<br> thereby eliminating the need to redirect to
+                        another page.
+                    </p>
+                    <img src="2048 1.png" alt="paybox" width="1005" height="605" style="margin-left: 60px;">
+                    <p class="sub-text">Before going forward we might have eCommerce and mobile app plugins that can
+                        help you get started immediately on a platform of your choice. Click on the Plugins option below
+                        to see plugins for Theteller.
+                    </p>
+                    <a href="#">
+                        <p class="small-text-one">View Plugins</p>
+                    </a>
+                    <span>
+                        <h4> Theteller Standard Checkout</h4>
+                        <p class="line-three"></p>
+                    </span>
+                    <p class="sub-text">This shows you how to accept payments fast with Theteller Standard Checkout
+                        Page.
+                        Accept payment quickly and securely using the standard method by calling the
+                        <code>/checkout/initiate endpoint.</code> <br>
+                        When you call the endpoint we return a response with a payment link, do a redirect to the link
+                        and a secure payment form would be loaded for your customer to enter their payment details. <br>
+                        When the transaction is completed we would call your <code>redirect_url</code> and append the
+                        payment response as query parameters.
+                    </p>
+
+                    <div class="step">
+                        <h4 style="margin-left:60px">Step 1: Collect payment details.</h4>
+                        <p class="sub-text">Collect the following data and send as a json payload to the
+                            <code>/checkout/initiate.</code></p>
+                        <p class="line"></p>
+                        <div class="marked-table">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr class="table-head">
+                                        <th align="justify" style="padding:30px">Parameter</th>
+                                        <th align="justify" style="padding:30px">Required</th>
+                                        <th align="justify" style="padding:30px ">Data Type</th>
+                                        <th align="center" style="padding:10px"> Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="stripe_1">
+                                        <td align="center">merchant_id</td>
+                                        <td align="center">true</td>
+                                        <td align="center">string</td>
+                                        <td align="justify" style="padding:10px">Your merchant ID provided when you
+                                            create an account.</td>
+                                    </tr>
+                                    <tr class="stripe_2">
+                                        <td align="center">transaction_id</td>
+                                        <td align="center">true</td>
+                                        <td align="center">string</td>
+                                        <td align="justify" style="padding:10px">Unique transaction reference provided
+                                            by you and must
+                                            be 12 digits.
+                                        </td>
+                                    </tr>
+                                    <tr class="stripe_1">
+                                        <td align="center">desc</td>
+                                        <td align="center">true</td>
+                                        <td align="center">string</td>
+                                        <td align="justify" style="padding:10px">Text to be displayed as a short
+                                            transaction narration.</td>
+                                    </tr>
+                                    <tr class="stripe_2">
+                                        <td align="center">amount</td>
+                                        <td align="center">true</td>
+                                        <td align="center">string</td>
+                                        <td align="justify" style="padding:10px">Amount to charge.</td>
+                                    </tr>
+                                    <tr class="stripe_1">
+                                        <td align="center">redirect_url</td>
+                                        <td align="center">true</td>
+                                        <td align="center">string</td>
+                                        <td align="justify" style="padding:10px">URL to redirect to when transaction is
+                                            completed.</td>
+                                    </tr>
+                                    <tr class="stripe_2">
+                                        <td align="center">email</td>
+                                        <td align="center">true</td>
+                                        <td align="center">string</td>
+                                        <td align="justify" style="padding:10px">Email of the customer.</td>
+                                    </tr>
+                                    <tr class="stripe_1">
+                                        <td align="center">API_Key</td>
+                                        <td align="center">true</td>
+                                        <td align="center">string</td>
+                                        <td align="justify" style="padding:10px">Your merchant API key provided when you
+                                            create an account.
+                                        </td>
+                                    </tr>
+                                    <tr class="stripe_2">
+                                        <td align="center">apiuser</td>
+                                        <td align="center">true</td>
+                                        <td align="center">string</td>
+                                        <td align="justify" style="padding:10px">Your merchant API Username provided
+                                            when you create an
+                                            account.
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="step" id="the_div" style="">
+                        <h4 style="margin-left:60px">Step 2: Initialize the payment.</h4>
+                        <p class="sub-text">After collecting payment details initialise the payment by calling our API
+                            with the payment details, see an example below.</p>
+                        <p class="line"></p>
+
+
+
+                        <div class="pc-tab">
+                            <input checked="checked" id="tab1" type="radio" name="pct1" />
+                            <input id="tab2" type="radio" name="pct1" />
+                            <input id="tab3" type="radio" name="pct1" />
+                            <input id="tab4" type="radio" name="pct1" />
+                            <nav>
+                                <ul>
+                                    <li class="tab1">
+                                        <label class="tab-label" for="tab1">Requests</label>
+                                    </li>
+                                    <li class="tab2">
+                                        <label class="tab-label" for="tab2">PHP</label>
+                                    </li>
+                                    <li class="tab3">
+                                        <label class="tab-label" for="tab3">C#</label>
+                                    </li>
+                                    <li class="tab4">
+                                        <label class="tab-label" for="tab4">Java</label>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <section>
+                                <div class="tab1">
+                                    <p>LIVE EndPoint<br>
+                                        Method: POST<br>
+                                        Endpoint/BaseURL: https://checkout.theteller.net/initiate<br>
+
+                                        //Request Headers<br>
+                                        Content-Type: application/json<br>
+                                        Authorization: Basic base64_encode('your API username:your API Key')<br>
+                                        Cache-Control: no-cache<br>
+
+                                        //Request Body<br>
+                                        {<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;"merchant_id":"Your merchant ID",<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;"transaction_id":"000000000000",<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;"desc":"Payment Using Checkout Page",<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;"amount":"000000000100",<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;"redirect_url":"http://redirect_url/response",<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;"email":"customer_email"<br>
+                                        }</p>
+                                </div>
+                                <div class="tab2">
+                                    <p>$payload = json_encode(["merchant_id"=>"Your merchant ID",
+                                        "transaction_id"=>"000000000000",<br>
+                                        "desc"=>"Payment Using Checkout Page", "amount"=>"000000000100",<br>
+                                        "redirect_url"=>"https://yoursite.com", "email"=>"mail@customer.com"]);<br>
+
+                                        $curl = curl_init();<br>
+
+                                        curl_setopt_array($curl, array(<br>
+                                        CURLOPT_URL => "https://test.theteller.net/checkout/initiate",<br>
+                                        CURLOPT_RETURNTRANSFER => true,<br>
+                                        CURLOPT_ENCODING => "",<br>
+                                        CURLOPT_MAXREDIRS => 10,<br>
+                                        CURLOPT_TIMEOUT => 30,<br>
+                                        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,<br>
+                                        CURLOPT_CUSTOMREQUEST => "POST",<br>
+                                        CURLOPT_POSTFIELDS => $payload,<br>
+                                        CURLOPT_HTTPHEADER => array(<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;"Authorization: Basic ".base64_encode('Your API
+                                        Username:Your API Key')."",<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;"Cache-Control: no-cache",<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;"Content-Type: application/json"<br>
+                                        ),<br>
+                                        ));<br>
+
+                                        $response = curl_exec($curl);<br>
+                                        $err = curl_error($curl);<br>
+
+                                        curl_close($curl);<br>
+
+                                        if ($err) {<br>
+                                        echo "cURL Error #:" . $err;<br>
+                                        } else {<br>
+                                        echo $response;<br>
+                                        }</p>
+                                </div>
+                                <div class="tab3">
+                                    <p>string authorization = your api user + ":" + your api key;<br>
+                                        var conversion = Encoding.UTF8.GetBytes(authorization);<br>
+                                        var encoded_authorization = Convert.ToBase64String(conversion);<br>
+
+                                        var client = new RestClient("https://test.theteller.net/checkout/initiate");<br>
+                                        var request = new RestRequest(Method.POST);<br>
+                                        request.AddHeader("Cache-Control", "no-cache");<br>
+                                        request.AddHeader("Authorization", "Basic "+encoded_authorization);<br>
+                                        request.AddHeader("Content-Type", "application/json");<br>
+                                        request.AddParameter("{\r\n \"merchant_id\": \"Your Merchant ID\",\r\n
+                                        \"transaction_id\":\"000000000000\",<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;\r\n \"desc\": \"Payment Using Checkout Page\",\r\n
+                                        \"amount\": \"000000000100\",\r\n \<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;"redirect_url\":
+                                        \"https://yoursite.com\",\r\n\"email\":\"email@customer.com\"\r\n}",
+                                        ParameterType.RequestBody)<br>;
+                                        IRestResponse response = client.Execute(request);</p>
+                                </div>
+                                <div class="tab4">
+                                    <p>byte[] code = "Your_API_User:Your_API_KEY ".getBytes(StandardCharsets.UTF_8);<br>
+                                        String encoded = Base64.getEncoder().encodeToString(code);<br>
+
+                                        OkHttpClient client = new OkHttpClient();<br>
+                                        MediaType mediaType = MediaType.parse("application/json");<br>
+                                        RequestBody body = RequestBody.create(mediaType,<br>
+                                        "{\r\n \"merchant_id\": \"Your Merchant ID\",\r\n
+                                        \"transaction_id\":\"000000000000\",\r\n \"desc\": \"Payment Using Checkout<br>
+                                        Page\",\r\n \"amount\": \"000000000100\",\r\n \"redirect_url\":
+                                        \"https://yoursite.com\",\r\n\"email\":\"email@customer.com\"\r\n}");<br>
+                                        Request request = new Request.Builder()<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;.url("https://test.theteller.net/checkout/initiate")<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;.post(body)<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;.addHeader("Content-Type", "application/json")<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;.addHeader("Authorization", "Basic " + encoded)<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;.addHeader("Cache-Control", "no-cache")<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;.build();<br>
+                                        Response response = client.newCall(request).execute();</p>
+                                </div>
+                            </section>
+                        </div>
+
+
+
+                    </div>
+
+                    <div class="secondary_1">
+                        &nbsp;&nbsp;&nbsp;&nbsp; {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"status": "success",<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"code": 200,<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"reason": "Token successfully
+                        generated",<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"token":
+                        "eU1xSFN5Ky92MUt5dmpnT",<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"checkout_url":
+                        "https://test.theteller.net/checkout/checkout/eU1xSFN5Ky92MUt5dmpnT"<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp; }
+                    </div>
+                    <p class="sub-text" style="padding-top: 20px;">
+                        If the request is successful, a token and a full checkout url is returned as response. you are
+                        to redirect the user to the checkout page using the url value <br> in the
+                        <code>checkout_url</code> field.<br>
+                        What happens when the user completes the transaction on the page?<br><br>
+
+                        When the user enter's their payment details, Theteller would validate then charge the card or
+                        mobile money. Once the charge is completed we would:<br><br>
+                        &nbsp;&nbsp;1. Call your <code>redirect url</code> and post the response to you via url encoded
+                        data, we also append your transaction ID as query params to the url.<br>
+                        &nbsp;&nbsp;2. Send an email to you and your customer on the successful payment. If email to
+                        customers is turned off we wouldn't send emails.
+                    </p>
+
+                </div>
+
+
+                <div class="overview" id="section_4" style="margin-top: 30px;">
+                    <h1> Theteller Inline JS </h1>
+                    <p class="sub-text">To use the Theteller Inline JS you need your merchant API Key, and follow the
+                        sample snippet below to add the inline js to your site or web application.</p>
+                    <p class="sub-text">Follow this steps to successfully collect payments from your customers easily:
+                    </p>
+                    <ol class="sub-text" style="list-style: decimal;">
+                        <li value="1">1. Copy the Theteller Inline JS script and paste on your site.</li>
+                        <li value="2">2. Change... the default API Keys to your keys, and the script url to your test
+                            url if you are performing a test payment.</li>
+                        <li value="3">3. Create a unique and dynamic reference to pass as your transaction ID.</li>
+                        <li value="4">4. Collect a test payment.</li>
+                    </ol>
+                    <p class="sub-text">Completing a successful Theteller test</p>
+                    <p class="sub-text">Theteller uses two environments one for <code>test</code> and one for
+                        <code>live</code>. On test environment the API keys and script url are different from the API
+                        keys and script url on live. <br>
+                        To get your test keys sign up on <code>http://theteller.net/signup</code> and retrieve your Test
+                        API key.
+                        When you use keys from the live environment with script url's from the test environment<br> you
+                        get an <code>"Invalid API key" error.</code></p>
+
+                    <p class="sub-text">When the user enters their details, Theteller would do the following:</p>
+                    <ol class="sub-text" style="list-style: decimal;">
+                        <li value="1">1. Validate the card</li>
+                        <li value="2">2. Charge it</li>
+                        <li value="3">3. and redirect to your redirect_url with the transaction ID appended to the URL
+                        </li>
+                    </ol>
+
+                    <br>
+
+                    <p style="margin-left: 70px; margin-top: 50px; font-size:20px">Theteller Inline Quick Setup Method
+                        [Embed Code]</p>
+                    <p class="sub-text">To get started quickly, copy the code below to your payment page and replace
+                        each anchor tag appropriately. This will generate a button where the script is placed on your
+                        website.<br> Remember to replace parameters with your own parameters.
+                        When the button is clicked, our secure payment modal will be popped up for your user to enter
+                        his payment details.<br> On completion of the transaction the user is redirected to your
+                        redirect_url</p>
+                    <div class="secondary">
+                        <p style="margin: 0;">&nbsp;&nbsp; form <br>
+                            &nbsp;&nbsp; a class="ttlr_inline" <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp; data-APIKey="Your API Key" <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp; data-transid="000000000000" <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp; data-amount="1" <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp; data-customer_email="email@customer.com" <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp; data-currency="GHS" <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp; data-redirect_url="https://yoursite.com" <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp; data-pay_button_text="Pay Now" <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp; data-custom_description="Payment Using InlineJS" <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp; data-payment_method="both" <br>
+                            &nbsp;&nbsp; /a <br>
+                            &nbsp;&nbsp;/form <br>
+
+                            script type="text/javascript"
+                            src="https://test.theteller.net/checkout/resource/api/inline/theteller_inline.js"/script
+                        </p>
+                    </div>
+                    <h4 style="margin-left:60px">Sample Callback Response</h4>
+                    <div class="secondary">
+                        https://redirect_url?code=000&status=successful&reason=transaction20%successful&transaction_id=000000000000
+                    </div>
+
+
+
+
+                    <div class="step" id="second_div">
+                        <h4 style="margin-left:60px">Checking Payment response/verification transaction.</h4>
+                        <p class="sub-text">When a transaction is completed we append the <code>transaction ID</code>,
+                            <code>status</code>, <code>code</code>, <code>reason</code> to your redirect URL. you can
+                            check the status of the transaction<br> using the transaction ID. In the example below we
+                            show a code snipet to check transaction status</p>
+                        <p class="line"></p>
+
+
+                        <div class="pc-tab">
+                            <input checked="checked" id="tab5" type="radio" name="pct" />
+                            <input id="tab6" type="radio" name="pct" />
+                            <input id="tab7" type="radio" name="pct" />
+                            <input id="tab8" type="radio" name="pct" />
+                            <nav>
+                                <ul>
+                                    <li class="tab5">
+                                        <label class="tab-label" for="tab5">Requests</label>
+                                    </li>
+                                    <li class="tab6">
+                                        <label class="tab-label" for="tab6">PHP</label>
+                                    </li>
+                                    <li class="tab7">
+                                        <label class="tab-label" for="tab7">C#</label>
+                                    </li>
+                                    <li class="tab8">
+                                        <label class="tab-label" for="tab8">Java</label>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <section>
+                                <div class="tab5">
+                                    <p>LIVE EndPoint<br>
+                                        Method: POST<br>
+                                        Endpoint/BaseURL: https://checkout.theteller.net/initiate<br>
+
+                                        //Request Headers<br>
+                                        Content-Type: application/json<br>
+                                        Authorization: Basic base64_encode('your API username:your API Key')<br>
+                                        Cache-Control: no-cache<br>
+
+                                        //Request Body<br>
+                                        {<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;"merchant_id":"Your merchant ID",<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;"transaction_id":"000000000000",<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;"desc":"Payment Using Checkout Page",<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;"amount":"000000000100",<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;"redirect_url":"http://redirect_url/response",<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;"email":"customer_email"<br>
+                                        }</p>
+                                </div>
+                                <div class="tab6">
+                                    <p>$payload = json_encode(["merchant_id"=>"Your merchant ID",
+                                        "transaction_id"=>"000000000000",<br>
+                                        "desc"=>"Payment Using Checkout Page", "amount"=>"000000000100",<br>
+                                        "redirect_url"=>"https://yoursite.com", "email"=>"mail@customer.com"]);<br>
+
+                                        $curl = curl_init();<br>
+
+                                        curl_setopt_array($curl, array(<br>
+                                        CURLOPT_URL => "https://test.theteller.net/checkout/initiate",<br>
+                                        CURLOPT_RETURNTRANSFER => true,<br>
+                                        CURLOPT_ENCODING => "",<br>
+                                        CURLOPT_MAXREDIRS => 10,<br>
+                                        CURLOPT_TIMEOUT => 30,<br>
+                                        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,<br>
+                                        CURLOPT_CUSTOMREQUEST => "POST",<br>
+                                        CURLOPT_POSTFIELDS => $payload,<br>
+                                        CURLOPT_HTTPHEADER => array(<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;"Authorization: Basic ".base64_encode('Your API
+                                        Username:Your API Key')."",<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;"Cache-Control: no-cache",<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;"Content-Type: application/json"<br>
+                                        ),<br>
+                                        ));<br>
+
+                                        $response = curl_exec($curl);<br>
+                                        $err = curl_error($curl);<br>
+
+                                        curl_close($curl);<br>
+
+                                        if ($err) {<br>
+                                        echo "cURL Error #:" . $err;<br>
+                                        } else {<br>
+                                        echo $response;<br>
+                                        }</p>
+                                </div>
+                                <div class="tab7">
+                                    <p>string authorization = your api user + ":" + your api key;<br>
+                                        var conversion = Encoding.UTF8.GetBytes(authorization);<br>
+                                        var encoded_authorization = Convert.ToBase64String(conversion);<br>
+
+                                        var client = new RestClient("https://test.theteller.net/checkout/initiate");<br>
+                                        var request = new RestRequest(Method.POST);<br>
+                                        request.AddHeader("Cache-Control", "no-cache");<br>
+                                        request.AddHeader("Authorization", "Basic "+encoded_authorization);<br>
+                                        request.AddHeader("Content-Type", "application/json");<br>
+                                        request.AddParameter("{\r\n \"merchant_id\": \"Your Merchant ID\",\r\n
+                                        \"transaction_id\":\"000000000000\",<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;\r\n \"desc\": \"Payment Using Checkout Page\",\r\n
+                                        \"amount\": \"000000000100\",\r\n \<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;"redirect_url\":
+                                        \"https://yoursite.com\",\r\n\"email\":\"email@customer.com\"\r\n}",
+                                        ParameterType.RequestBody)<br>;
+                                        IRestResponse response = client.Execute(request);</p>
+                                </div>
+                                <div class="tab8">
+                                    <p>byte[] code = "Your_API_User:Your_API_KEY ".getBytes(StandardCharsets.UTF_8);<br>
+                                        String encoded = Base64.getEncoder().encodeToString(code);<br>
+
+                                        OkHttpClient client = new OkHttpClient();<br>
+                                        MediaType mediaType = MediaType.parse("application/json");<br>
+                                        RequestBody body = RequestBody.create(mediaType,<br>
+                                        "{\r\n \"merchant_id\": \"Your Merchant ID\",\r\n
+                                        \"transaction_id\":\"000000000000\",\r\n \"desc\": \"Payment Using Checkout<br>
+                                        Page\",\r\n \"amount\": \"000000000100\",\r\n \"redirect_url\":
+                                        \"https://yoursite.com\",\r\n\"email\":\"email@customer.com\"\r\n}");<br>
+                                        Request request = new Request.Builder()<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;.url("https://test.theteller.net/checkout/initiate")<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;.post(body)<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;.addHeader("Content-Type", "application/json")<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;.addHeader("Authorization", "Basic " + encoded)<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;.addHeader("Cache-Control", "no-cache")<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;.build();<br>
+                                        Response response = client.newCall(request).execute();</p>
+                                </div>
+                            </section>
+                        </div>
+
+                    </div>
+                    <h4 style="margin-left:60px">Sample Response</h4>
+                    <div class="secondary_1">
+                        &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"code": "000",<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"status": "approved",<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"reason": "Transaction Successful",<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"transaction_id": "000000000267",<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"r_switch": "VIS",<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"subscriber_number": "************1999",<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"amount": 1<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;}
+                    </div>
+
+
+
+
+                    <h1> Fund Transfers </h1>
+                    <p class="sub-text">This section describes how to transfer funds from merchant float account to
+                        mobile money or bank account.</p>
+                    <p class="sub-text">One of the core functionalities of Theteller API is to make transferring funds
+                        as easy as it gets, regardless of the payment channels or mode of collection, the process of
+                        moving <br> funds is meant to be effortless and secure.
+                        To complete a successful fund trasfer, ensure you have setup a merchant transfer float account
+                        on the Theteller Dashboard.<br> Login now to setup float account.
+                        When a transfer request is initiated, the merchant transfer float account is debited. In cases
+                        of failed fund transfers, a reversal is done.</p>
+                    <div class="marked-table">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr class="table-head">
+                                    <th align="center" style="padding: 10px;">Parameter</th>
+                                    <th align="center" style="padding: 10px;">Required</th>
+                                    <th align="center" style="padding: 10px;"> Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="stripe_1">
+                                    <td align="center" style="padding:10px">APIKey</td>
+                                    <td align="center" style="padding:10px">true</td>
+                                    <td align="center" style="padding:10px">Your merchant API key provided when you
+                                        create an
+                                        account.
+                                    </td>
+                                </tr>
+                                <tr class="stripe_2">
+                                    <td align="center" style="padding:10px">transid</td>
+                                    <td align="center" style="padding:10px">true</td>
+                                    <td align="center" style="padding:10px">Unique transaction reference provided by
+                                        you.</td>
+                                </tr>
+                                <tr class="stripe_1">
+                                    <td align="center" style="padding:10px">amount</td>
+                                    <td align="center" style="padding:10px">true</td>
+                                    <td align="center" style="padding:10px">Amount to charge.</td>
+                                </tr>
+                                <tr class="stripe_2">
+                                    <td align="center" style="padding:10px">customer_email</td>
+                                    <td align="center" style="padding:10px">true</td>
+                                    <td align="center" style="padding:10px">Customer Email</td>
+                                </tr>
+                                <tr class="stripe_1">
+                                    <td align="center" style="padding:10px">currency</td>
+                                    <td align="center" style="padding:10px">true</td>
+                                    <td align="center" style="padding:10px">Currency to charge customer in. Defaults to
+                                        GHS</td>
+                                </tr>
+                                <tr class="stripe_2">
+                                    <td align="center" style="padding:10px">redirect_url</td>
+                                    <td align="center" style="padding:10px">true</td>
+                                    <td align="center" style="padding:10px">URL to redirect to when transaction is
+                                        completed.
+                                    </td>
+                                </tr>
+                                <tr class="stripe_1">
+                                    <td align="center" style="padding:10px">pay_button_text</td>
+                                    <td align="center" style="padding:10px">true</td>
+                                    <td align="center" style="padding:10px">Text to show on pay button.</td>
+                                </tr>
+                                <tr class="stripe_2">
+                                    <td align="center" style="padding:10px">custom_description</td>
+                                    <td align="center" style="padding:10px">true</td>
+                                    <td align="center" style="padding:10px">Text to be displayed as a short transaction
+                                        narration.
+                                    </td>
+                                </tr>
+                                <tr class="stripe_1">
+                                    <td align="center" style="padding:10px">payment_method</td>
+                                    <td align="center" style="padding:10px">true</td>
+                                    <td align="center" style="padding:10px">Choose between card or mobile money payment.
+                                        <br>e.g
+                                        card,
+                                        momo, both
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+
+                <h1> To Mobile Money </h1>
+                <p class="sub-text">Theteller API makes it possible to transfer funds to any mobile money service
+                    provider in Ghana. This allows merchants transfer funds from their merchant transfer float <br>
+                    account to any valid mobile money number subscribed on MTN, Airtel, Tigo, Vodafone network
+                    instantly.
+                </p>
+
+                <div class="pc-tab">
+                    <input checked="checked" id="tab9" type="radio" name="pct2" />
+                    <input id="tab10" type="radio" name="pct2" />
+                    <input id="tab11" type="radio" name="pct2" />
+                    <input id="tab12" type="radio" name="pct2" />
+                    <nav>
+                        <ul>
+                            <li class="tab9">
+                                <label class="tab-label" for="tab9">Requests</label>
+                            </li>
+                            <li class="tab10">
+                                <label class="tab-label" for="tab10">PHP</label>
+                            </li>
+                            <li class="tab11">
+                                <label class="tab-label" for="tab11">C#</label>
+                            </li>
+                            <li class="tab12">
+                                <label class="tab-label" for="tab12">Java</label>
+                            </li>
+                        </ul>
+                    </nav>
+                    <section>
+                        <div class="tab9">
+                            <p>LIVE EndPoint<br>
+                                Method: POST<br>
+                                Endpoint/BaseURL: https://checkout.theteller.net/initiate<br>
+
+                                //Request Headers<br>
+                                Content-Type: application/json<br>
+                                Authorization: Basic base64_encode('your API username:your API Key')<br>
+                                Cache-Control: no-cache<br>
+
+                                //Request Body<br>
+                                {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;"merchant_id":"Your merchant ID",<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;"transaction_id":"000000000000",<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;"desc":"Payment Using Checkout Page",<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;"amount":"000000000100",<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;"redirect_url":"http://redirect_url/response",<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;"email":"customer_email"<br>
+                                }</p>
+                        </div>
+                        <div class="tab10">
+                            <p>$payload = json_encode(["merchant_id"=>"Your merchant ID",
+                                "transaction_id"=>"000000000000",<br>
+                                "desc"=>"Payment Using Checkout Page", "amount"=>"000000000100",<br>
+                                "redirect_url"=>"https://yoursite.com", "email"=>"mail@customer.com"]);<br>
+
+                                $curl = curl_init();<br>
+
+                                curl_setopt_array($curl, array(<br>
+                                CURLOPT_URL => "https://test.theteller.net/checkout/initiate",<br>
+                                CURLOPT_RETURNTRANSFER => true,<br>
+                                CURLOPT_ENCODING => "",<br>
+                                CURLOPT_MAXREDIRS => 10,<br>
+                                CURLOPT_TIMEOUT => 30,<br>
+                                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,<br>
+                                CURLOPT_CUSTOMREQUEST => "POST",<br>
+                                CURLOPT_POSTFIELDS => $payload,<br>
+                                CURLOPT_HTTPHEADER => array(<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;"Authorization: Basic ".base64_encode('Your API
+                                Username:Your API Key')."",<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;"Cache-Control: no-cache",<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;"Content-Type: application/json"<br>
+                                ),<br>
+                                ));<br>
+
+                                $response = curl_exec($curl);<br>
+                                $err = curl_error($curl);<br>
+
+                                curl_close($curl);<br>
+
+                                if ($err) {<br>
+                                echo "cURL Error #:" . $err;<br>
+                                } else {<br>
+                                echo $response;<br>
+                                }</p>
+                        </div>
+                        <div class="tab11">
+                            <p>string authorization = your api user + ":" + your api key;<br>
+                                var conversion = Encoding.UTF8.GetBytes(authorization);<br>
+                                var encoded_authorization = Convert.ToBase64String(conversion);<br>
+
+                                var client = new RestClient("https://test.theteller.net/checkout/initiate");<br>
+                                var request = new RestRequest(Method.POST);<br>
+                                request.AddHeader("Cache-Control", "no-cache");<br>
+                                request.AddHeader("Authorization", "Basic "+encoded_authorization);<br>
+                                request.AddHeader("Content-Type", "application/json");<br>
+                                request.AddParameter("{\r\n \"merchant_id\": \"Your Merchant ID\",\r\n
+                                \"transaction_id\":\"000000000000\",<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;\r\n \"desc\": \"Payment Using Checkout Page\",\r\n
+                                \"amount\": \"000000000100\",\r\n \<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;"redirect_url\":
+                                \"https://yoursite.com\",\r\n\"email\":\"email@customer.com\"\r\n}",
+                                ParameterType.RequestBody)<br>;
+                                IRestResponse response = client.Execute(request);</p>
+                        </div>
+                        <div class="tab12">
+                            <p>byte[] code = "Your_API_User:Your_API_KEY ".getBytes(StandardCharsets.UTF_8);<br>
+                                String encoded = Base64.getEncoder().encodeToString(code);<br>
+
+                                OkHttpClient client = new OkHttpClient();<br>
+                                MediaType mediaType = MediaType.parse("application/json");<br>
+                                RequestBody body = RequestBody.create(mediaType,<br>
+                                "{\r\n \"merchant_id\": \"Your Merchant ID\",\r\n
+                                \"transaction_id\":\"000000000000\",\r\n \"desc\": \"Payment Using Checkout<br>
+                                Page\",\r\n \"amount\": \"000000000100\",\r\n \"redirect_url\":
+                                \"https://yoursite.com\",\r\n\"email\":\"email@customer.com\"\r\n}");<br>
+                                Request request = new Request.Builder()<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;.url("https://test.theteller.net/checkout/initiate")<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;.post(body)<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;.addHeader("Content-Type", "application/json")<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;.addHeader("Authorization", "Basic " + encoded)<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;.addHeader("Cache-Control", "no-cache")<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;.build();<br>
+                                Response response = client.newCall(request).execute();</p>
+                        </div>
+                    </section>
+                </div>
+
+                <h1> To Bank Account </h1>
+                <p class="sub-text">
+                    Now you can credit any local bank account in Ghana instantly with Theteller API. Theteller API
+                    provides the functionality for merchants to transfer funds from their
+                    float account to any bank account in Ghana.
+                </p>
+
+                <div class="pc-tab">
+                    <input checked="checked" id="tab13" type="radio" name="pct3" />
+                    <input id="tab14" type="radio" name="pct3" />
+                    <input id="tab15" type="radio" name="pct3" />
+                    <input id="tab16" type="radio" name="pct3" />
+                    <nav>
+                        <ul>
+                            <li class="tab13">
+                                <label class="tab-label" for="tab13">Requests</label>
+                            </li>
+                            <li class="tab14">
+                                <label class="tab-label" for="tab14">PHP</label>
+                            </li>
+                            <li class="tab15">
+                                <label class="tab-label" for="tab15">C#</label>
+                            </li>
+                            <li class="tab16">
+                                <label class="tab-label" for="tab16">Java</label>
+                            </li>
+                        </ul>
+                    </nav>
+                    <section>
+                        <div class="tab13">
+                            <p>LIVE EndPoint<br>
+                                Method: POST<br>
+                                Endpoint/BaseURL: https://checkout.theteller.net/initiate<br>
+
+                                //Request Headers<br>
+                                Content-Type: application/json<br>
+                                Authorization: Basic base64_encode('your API username:your API Key')<br>
+                                Cache-Control: no-cache<br>
+
+                                //Request Body<br>
+                                {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;"merchant_id":"Your merchant ID",<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;"transaction_id":"000000000000",<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;"desc":"Payment Using Checkout Page",<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;"amount":"000000000100",<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;"redirect_url":"http://redirect_url/response",<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;"email":"customer_email"<br>
+                                }</p>
+                        </div>
+                        <div class="tab14">
+                            <p>$payload = json_encode(["merchant_id"=>"Your merchant ID",
+                                "transaction_id"=>"000000000000",<br>
+                                "desc"=>"Payment Using Checkout Page", "amount"=>"000000000100",<br>
+                                "redirect_url"=>"https://yoursite.com", "email"=>"mail@customer.com"]);<br>
+
+                                $curl = curl_init();<br>
+
+                                curl_setopt_array($curl, array(<br>
+                                CURLOPT_URL => "https://test.theteller.net/checkout/initiate",<br>
+                                CURLOPT_RETURNTRANSFER => true,<br>
+                                CURLOPT_ENCODING => "",<br>
+                                CURLOPT_MAXREDIRS => 10,<br>
+                                CURLOPT_TIMEOUT => 30,<br>
+                                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,<br>
+                                CURLOPT_CUSTOMREQUEST => "POST",<br>
+                                CURLOPT_POSTFIELDS => $payload,<br>
+                                CURLOPT_HTTPHEADER => array(<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;"Authorization: Basic ".base64_encode('Your API
+                                Username:Your API Key')."",<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;"Cache-Control: no-cache",<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;"Content-Type: application/json"<br>
+                                ),<br>
+                                ));<br>
+
+                                $response = curl_exec($curl);<br>
+                                $err = curl_error($curl);<br>
+
+                                curl_close($curl);<br>
+
+                                if ($err) {<br>
+                                echo "cURL Error #:" . $err;<br>
+                                } else {<br>
+                                echo $response;<br>
+                                }</p>
+                        </div>
+                        <div class="tab15">
+                            <p>string authorization = your api user + ":" + your api key;<br>
+                                var conversion = Encoding.UTF8.GetBytes(authorization);<br>
+                                var encoded_authorization = Convert.ToBase64String(conversion);<br>
+
+                                var client = new RestClient("https://test.theteller.net/checkout/initiate");<br>
+                                var request = new RestRequest(Method.POST);<br>
+                                request.AddHeader("Cache-Control", "no-cache");<br>
+                                request.AddHeader("Authorization", "Basic "+encoded_authorization);<br>
+                                request.AddHeader("Content-Type", "application/json");<br>
+                                request.AddParameter("{\r\n \"merchant_id\": \"Your Merchant ID\",\r\n
+                                \"transaction_id\":\"000000000000\",<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;\r\n \"desc\": \"Payment Using Checkout Page\",\r\n
+                                \"amount\": \"000000000100\",\r\n \<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;"redirect_url\":
+                                \"https://yoursite.com\",\r\n\"email\":\"email@customer.com\"\r\n}",
+                                ParameterType.RequestBody)<br>;
+                                IRestResponse response = client.Execute(request);</p>
+                        </div>
+                        <div class="tab16">
+                            <p>byte[] code = "Your_API_User:Your_API_KEY ".getBytes(StandardCharsets.UTF_8);<br>
+                                String encoded = Base64.getEncoder().encodeToString(code);<br>
+
+                                OkHttpClient client = new OkHttpClient();<br>
+                                MediaType mediaType = MediaType.parse("application/json");<br>
+                                RequestBody body = RequestBody.create(mediaType,<br>
+                                "{\r\n \"merchant_id\": \"Your Merchant ID\",\r\n
+                                \"transaction_id\":\"000000000000\",\r\n \"desc\": \"Payment Using Checkout<br>
+                                Page\",\r\n \"amount\": \"000000000100\",\r\n \"redirect_url\":
+                                \"https://yoursite.com\",\r\n\"email\":\"email@customer.com\"\r\n}");<br>
+                                Request request = new Request.Builder()<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;.url("https://test.theteller.net/checkout/initiate")<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;.post(body)<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;.addHeader("Content-Type", "application/json")<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;.addHeader("Authorization", "Basic " + encoded)<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;.addHeader("Cache-Control", "no-cache")<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;.build();<br>
+                                Response response = client.newCall(request).execute();</p>
+                        </div>
+                    </section>
+                </div>
+
+                <p class="sub-text">
+                    On successful name enquiry response, the account name associated to the provided account number is
+                    returned. To continue the transfer, confirm that the account name is actually the account you wish
+                    to credit.
+                    To complete bank transfer, make the below request.
+                </p>
+
+                <h1> Complete Bank Transfer </h1>
+                <div class="pc-tab">
+                    <input checked="checked" id="tab17" type="radio" name="pct4" />
+                    <input id="tab18" type="radio" name="pct4" />
+                    <input id="tab19" type="radio" name="pct4" />
+                    <input id="tab20" type="radio" name="pct4" />
+                    <nav>
+                        <ul>
+                            <li class="tab17">
+                                <label class="tab-label" for="tab17">Requests</label>
+                            </li>
+                            <li class="tab18">
+                                <label class="tab-label" for="tab18">PHP</label>
+                            </li>
+                            <li class="tab19">
+                                <label class="tab-label" for="tab19">C#</label>
+                            </li>
+                            <li class="tab20">
+                                <label class="tab-label" for="tab20">Java</label>
+                            </li>
+                        </ul>
+                    </nav>
+                    <section>
+                        <div class="tab17">
+                            <p>LIVE EndPoint<br>
+                                Method: POST<br>
+                                Endpoint/BaseURL: https://checkout.theteller.net/initiate<br>
+
+                                //Request Headers<br>
+                                Content-Type: application/json<br>
+                                Authorization: Basic base64_encode('your API username:your API Key')<br>
+                                Cache-Control: no-cache<br>
+
+                                //Request Body<br>
+                                {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;"merchant_id":"Your merchant ID",<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;"transaction_id":"000000000000",<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;"desc":"Payment Using Checkout Page",<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;"amount":"000000000100",<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;"redirect_url":"http://redirect_url/response",<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;"email":"customer_email"<br>
+                                }</p>
+                        </div>
+                        <div class="tab18">
+                            <p>$payload = json_encode(["merchant_id"=>"Your merchant ID",
+                                "transaction_id"=>"000000000000",<br>
+                                "desc"=>"Payment Using Checkout Page", "amount"=>"000000000100",<br>
+                                "redirect_url"=>"https://yoursite.com", "email"=>"mail@customer.com"]);<br>
+
+                                $curl = curl_init();<br>
+
+                                curl_setopt_array($curl, array(<br>
+                                CURLOPT_URL => "https://test.theteller.net/checkout/initiate",<br>
+                                CURLOPT_RETURNTRANSFER => true,<br>
+                                CURLOPT_ENCODING => "",<br>
+                                CURLOPT_MAXREDIRS => 10,<br>
+                                CURLOPT_TIMEOUT => 30,<br>
+                                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,<br>
+                                CURLOPT_CUSTOMREQUEST => "POST",<br>
+                                CURLOPT_POSTFIELDS => $payload,<br>
+                                CURLOPT_HTTPHEADER => array(<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;"Authorization: Basic ".base64_encode('Your API
+                                Username:Your API Key')."",<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;"Cache-Control: no-cache",<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;"Content-Type: application/json"<br>
+                                ),<br>
+                                ));<br>
+
+                                $response = curl_exec($curl);<br>
+                                $err = curl_error($curl);<br>
+
+                                curl_close($curl);<br>
+
+                                if ($err) {<br>
+                                echo "cURL Error #:" . $err;<br>
+                                } else {<br>
+                                echo $response;<br>
+                                }</p>
+                        </div>
+                        <div class="tab19">
+                            <p>string authorization = your api user + ":" + your api key;<br>
+                                var conversion = Encoding.UTF8.GetBytes(authorization);<br>
+                                var encoded_authorization = Convert.ToBase64String(conversion);<br>
+
+                                var client = new RestClient("https://test.theteller.net/checkout/initiate");<br>
+                                var request = new RestRequest(Method.POST);<br>
+                                request.AddHeader("Cache-Control", "no-cache");<br>
+                                request.AddHeader("Authorization", "Basic "+encoded_authorization);<br>
+                                request.AddHeader("Content-Type", "application/json");<br>
+                                request.AddParameter("{\r\n \"merchant_id\": \"Your Merchant ID\",\r\n
+                                \"transaction_id\":\"000000000000\",<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;\r\n \"desc\": \"Payment Using Checkout Page\",\r\n
+                                \"amount\": \"000000000100\",\r\n \<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;"redirect_url\":
+                                \"https://yoursite.com\",\r\n\"email\":\"email@customer.com\"\r\n}",
+                                ParameterType.RequestBody)<br>;
+                                IRestResponse response = client.Execute(request);</p>
+                        </div>
+                        <div class="tab20">
+                            <p>byte[] code = "Your_API_User:Your_API_KEY ".getBytes(StandardCharsets.UTF_8);<br>
+                                String encoded = Base64.getEncoder().encodeToString(code);<br>
+
+                                OkHttpClient client = new OkHttpClient();<br>
+                                MediaType mediaType = MediaType.parse("application/json");<br>
+                                RequestBody body = RequestBody.create(mediaType,<br>
+                                "{\r\n \"merchant_id\": \"Your Merchant ID\",\r\n
+                                \"transaction_id\":\"000000000000\",\r\n \"desc\": \"Payment Using Checkout<br>
+                                Page\",\r\n \"amount\": \"000000000100\",\r\n \"redirect_url\":
+                                \"https://yoursite.com\",\r\n\"email\":\"email@customer.com\"\r\n}");<br>
+                                Request request = new Request.Builder()<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;.url("https://test.theteller.net/checkout/initiate")<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;.post(body)<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;.addHeader("Content-Type", "application/json")<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;.addHeader("Authorization", "Basic " + encoded)<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;.addHeader("Cache-Control", "no-cache")<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;.build();<br>
+                                Response response = client.newCall(request).execute();</p>
+                        </div>
+                    </section>
+                </div>
+
+                <h1> Payments </h1>
+                <p class="sub-text">
+                    This section describes how to collect payments directly from your web application.
+                </p>
+                <p class="line"></p>
+                <p class="sub-text">
+                    Merchant who are PCI DSS Compliant and have a secured system in place can send card details directly
+                    from their application to Theteller to process.
+                </p>
+                <h4 style="margin-left:60px">Request Parameters</h4>
+                <div class="marked-table">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr class="table-head">
+                                <th align="center" style="padding: 10px;">Parameter</th>
+                                <th align="center" style="padding: 10px;">Required</th>
+                                <th align="center" style="padding: 10px;">Type</th>
+                                <th align="center" style="padding: 10px;"> Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="stripe_1">
+                                <td align="center" style="padding:10px">merchant_id</td>
+                                <td align="center" style="padding:10px">true</td>
+                                <td align="center" style="padding:10px">String</td>
+                                <td align="center" style="padding:10px">Your merchant API key provided when you
+                                    create an account.
+                                </td>
+                            </tr>
+                            <tr class="stripe_2">
+                                <td align="center" style="padding:10px">transid</td>
+                                <td align="center" style="padding:10px">true</td>
+                                <td align="center" style="padding:10px">string</td>
+                                <td align="center" style="padding:10px">Unique transaction reference provided by you.
+                                </td>
+                            </tr>
+                            <tr class="stripe_1">
+                                <td align="center" style="padding:10px">amount</td>
+                                <td align="center" style="padding:10px">true</td>
+                                <td align="center" style="padding:10px">string</td>
+                                <td align="center" style="padding:10px">Amount to charge.</td>
+                            </tr>
+                            <tr class="stripe_2">
+                                <td align="center" style="padding:10px">Processing_code</td>
+                                <td align="center" style="padding:10px">true</td>
+                                <td align="center" style="padding:10px">String</td>
+                                <td align="center" style="padding:10px"> This is a transaction type identifier.
+                                    <br>404000 is default for transfer to mobile money
+                                    <br> "000000" for card payment
+                                    <br> "000200" for mobile money payment</td>
+                            </tr>
+                            <tr class="stripe_1">
+                                <td align="center" style="padding:10px">r-switch</td>
+                                <td align="center" style="padding:10px">true</td>
+                                <td align="center" style="padding:10px">String</td>
+                                <td align="center" style="padding:10px">Account issuer or network on which the account
+                                    to be debited resides.<br>
+                                    "VIS" for Visa<br>
+                                    "MAS" for MasterCard<br>
+                                    "MTN" for MTN<br>
+                                    "VDF" for Vodafone<br>
+                                </td>
+                            </tr>
+                            <tr class="stripe_2">
+                                <td align="center" style="padding:10px">desc</td>
+                                <td align="center" style="padding:10px">true</td>
+                                <td align="center" style="padding:10px">String</td>
+                                <td align="center" style="padding:10px">Text to be displayed as a short transaction
+                                    narration.
+                                </td>
+                            </tr>
+                            <tr class="stripe_1">
+                                <td align="center" style="padding:10px">customer_email</td>
+                                <td align="center" style="padding:10px">true</td>
+                                <td align="center" style="padding:10px">String</td>
+                                <td align="center" style="padding:10px">Your customer email.</td>
+                            </tr>
+                            <tr class="stripe_2">
+                                <td align="center" style="padding:10px">card_holder</td>
+                                <td align="center" style="padding:10px">true</td>
+                                <td align="center" style="padding:10px">String</td>
+                                <td align="center" style="padding:10px">Card holder name on card.
+                                </td>
+                            </tr>
+                            <tr class="stripe_1">
+                                <td align="center" style="padding:10px">currency</td>
+                                <td align="center" style="padding:10px">true</td>
+                                <td align="center" style="padding:10px">String</td>
+                                <td align="center" style="padding:10px">Currency to charge card
+                                </td>
+                            </tr>
+                            <tr class="stripe_2">
+                                <td align="center" style="padding:10px">Pan</td>
+                                <td align="center" style="padding:10px">true</td>
+                                <td align="center" style="padding:10px">String</td>
+                                <td align="center" style="padding:10px">card pan number on card
+                                </td>
+                            </tr>
+                            <tr class="stripe_1">
+                                <td align="center" style="padding:10px">exp_month</td>
+                                <td align="center" style="padding:10px">true</td>
+                                <td align="center" style="padding:10px">String</td>
+                                <td align="center" style="padding:10px">Expiry month of card
+                                </td>
+                            </tr>
+                            <tr class="stripe_2">
+                                <td align="center" style="padding:10px">exp_year</td>
+                                <td align="center" style="padding:10px">true</td>
+                                <td align="center" style="padding:10px">String</td>
+                                <td align="center" style="padding:10px">Expiry year of card
+                                </td>
+                            </tr>
+                            <tr class="stripe_1">
+                                <td align="center" style="padding:10px">cvv</td>
+                                <td align="center" style="padding:10px">true</td>
+                                <td align="center" style="padding:10px">String</td>
+                                <td align="center" style="padding:10px">CVV on back of card
+                                </td>
+                            </tr>
+                            <tr class="stripe_2">
+                                <td align="center" style="padding:10px">3d_url_response</td>
+                                <td align="center" style="padding:10px">true</td>
+                                <td align="center" style="padding:10px">String</td>
+                                <td align="center" style="padding:10px">Callback url to return your user to when
+                                    transaction is completed
+                                </td>
+                            </tr>
+                            <tr class="stripe_1">
+                                <td align="center" style="padding:10px">subscriber_number</td>
+                                <td align="center" style="padding:10px">true</td>
+                                <td align="center" style="padding:10px">String</td>
+                                <td align="center" style="padding:10px">Mobile money wallet to charge
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <h1>Card Payments</h1>
+                <p class="sub-text">
+                    Theteller API processes VISA, MasterCard and TelaCards, other card schemes will be added to the list
+                    soon. Every request requires the following request headers.
+                </p>
+                <div class="secondary_1_1">
+                    //Request Headers<br>
+                    Content-Type: application/json<br>
+                    Authorization: Basic base64_encode('your API username:your API Key')<br>
+                    Cache-Control: no-cache<br>
+                </div>
+
+                <p class="sub-text" style="margin-top: 30px;">
+                    To complete a successful payment request send the following request.
+                </p>
+                <div class="secondary_1_1">
+                    //Request Headers<br>
+                    Method: POST<br>
+                    Endpoint: /v1.1/transaction/process<br>
+
+                    //Request Headers<br>
+                    Content-Type: application/json<br>
+                    Authorization: Basic base64_encode('your API username:your API Key')<br>
+                    Cache-Control: no-cache<br>
+
+                    //Request Body<br>
+                    {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;"processing_code":"000000",<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;"r-switch":"VIS",<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;"transaction_id":"000000000000",<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;"merchant_id":"Your merchant ID",<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;"pan":"4310000000000000",<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;"3d_url_response":"your_redirect_url",<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;"exp_month":"05",<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;"exp_year":"21",<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;"cvv":"000",<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;"desc":"Card Payment Test",<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;"amount":"000000000100",<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;"currency":"GHS",<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;"card_holder":"Card Holder Name",<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;"customer_email":"Customer Email"<br>
+                    }
+                </div>
+
+
+                <h4 style="margin-left:60px">Sample Response</h4>
+                <div class="secondary_1_1">
+                    &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"transaction_id":"000000000000",<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"status": "approved",<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"code": "000",<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"reason": "Transaction successful!"<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}
+                </div>
+
+                <h1>Handling VBV</h1>
+                <p class="sub-text" style="margin-top: 30px;">
+                    VBV is an acronym form Verified for Visa, this is a security feature on cards which requires further
+                    authorization by card holder when such cards are used for online transaction. <br> <br> If your
+                    payment
+                    request get a response as shown below, it means the request requires further authorization by card
+                    holder. Simply redirect your user to the url specied in the reason <br> field in the response. The
+                    URL
+                    takes the user to his card issuing bank secure ACS page to complete transaction
+                </p>
+
+                <div class="secondary_1_1">
+                    &nbsp;&nbsp;&nbsp;&nbsp;{ <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"status": "vbv required", <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"code": 200, <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"reason":
+                    "https://test.theteller.net/v1.1/3ds/resource/authentication/000000000000"<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;} <br>
+                </div>
+                <p class="sub-text" style="margin-top: 30px;">
+                    After your user completes payment authorization, user is redirected to your provided
+                    3d_redirect_url. The result of the transaction is appended to the url.
+                </p>
+                <div class="secondary_1_1">
+                    https://redirect_url?code=000&status=successful&reason=transaction20%successful&transaction_id=000000000000
+                </div>
+
+                <h1>Mobile Money Payments</h1>
+                <p class="sub-text" style="margin-top: 30px;">
+                    Theteller API processes multiple mobile money platform MTN, Vodafone and AirtelTigo. Every request
+                    requires the following request headers.
+                </p>
+
+                <h4 style="margin-left:60px">Request Parameters</h4>
+                <div class="marked-table">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr class="table-head">
+                                <th align="center" style="padding: 10px;">Parameter</th>
+                                <th align="center" style="padding: 10px;">Required</th>
+                                <th align="center" style="padding: 10px;">Type</th>
+                                <th align="center" style="padding: 10px;"> Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="stripe_1">
+                                <td align="center" style="padding:10px">merchant_id</td>
+                                <td align="center" style="padding:10px">true</td>
+                                <td align="center" style="padding:10px">String</td>
+                                <td align="center" style="padding:10px">Your merchant API key provided when you
+                                    create an account.
+                                </td>
+                            </tr>
+                            <tr class="stripe_2">
+                                <td align="center" style="padding:10px">transid</td>
+                                <td align="center" style="padding:10px">true</td>
+                                <td align="center" style="padding:10px">string</td>
+                                <td align="center" style="padding:10px">Unique transaction reference provided by you.
+                                </td>
+                            </tr>
+                            <tr class="stripe_1">
+                                <td align="center" style="padding:10px">amount</td>
+                                <td align="center" style="padding:10px">true</td>
+                                <td align="center" style="padding:10px">string</td>
+                                <td align="center" style="padding:10px">Amount to charge.</td>
+                            </tr>
+                            <tr class="stripe_2">
+                                <td align="center" style="padding:10px">Processing_code</td>
+                                <td align="center" style="padding:10px">true</td>
+                                <td align="center" style="padding:10px">String</td>
+                                <td align="center" style="padding:10px"> This is a transaction type identifier.
+                                    <br>404000 is default for transfer to mobile money
+                                    <br> "000000" for card payment
+                                    <br> "000200" for mobile money payment</td>
+                            </tr>
+                            <tr class="stripe_1">
+                                <td align="center" style="padding:10px">r-switch</td>
+                                <td align="center" style="padding:10px">true</td>
+                                <td align="center" style="padding:10px">String</td>
+                                <td align="center" style="padding:10px">Account issuer or network on which the account
+                                    to be debited resides.<br>
+                                    "VIS" for Visa<br>
+                                    "MAS" for MasterCard<br>
+                                    "MTN" for MTN<br>
+                                    "VDF" for Vodafone<br>
+                                </td>
+                            </tr>
+                            <tr class="stripe_2">
+                                <td align="center" style="padding:10px">desc</td>
+                                <td align="center" style="padding:10px">true</td>
+                                <td align="center" style="padding:10px">String</td>
+                                <td align="center" style="padding:10px">Text to be displayed as a short transaction
+                                    narration.
+                                </td>
+                            </tr>
+                            <tr class="stripe_1">
+                                <td align="center" style="padding:10px">subscriber_number</td>
+                                <td align="center" style="padding:10px">true</td>
+                                <td align="center" style="padding:10px">String</td>
+                                <td align="center" style="padding:10px">Mobile money wallet to charge
+                                </td>
+                            </tr>
+                            <tr class="stripe_2">
+                                <td align="center" style="padding:10px">Voucher_code</td>
+                                <td align="center" style="padding:10px">true (when r-switch is VDF)</td>
+                                <td align="center" style="padding:10px">String</td>
+                                <td align="center" style="padding:10px">the 6 digit code Vodafone sends when a
+                                    transaction is initiated.
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="secondary_1_1">
+                    //Request Headers <br>
+                    Content-Type: application/json <br>
+                    Authorization: Basic base64_encode('your API username:your API Key') <br>
+                    Cache-Control: no-cache <br>
+                </div>
+
+                <div class="secondary_1_1">
+                    Method: POST <br>
+                    Endpoint: /v1.1/transaction/process <br><br>
+
+                    //Request Headers <br>
+                    Content-Type: application/json <br>
+                    Authorization: Basic base64_encode('your API username:your API Key') <br>
+                    Cache-Control: no-cache <br><br>
+
+                    //Request Body <br>
+                    { <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;"amount" : "000000000200", <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;"processing_code" : "000200", <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;"transaction_id" : "000000000000", <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;"desc" : "Mobile Money Payment Test", <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;"merchant_id" : "Your Merchant ID", <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;"subscriber_number" : "233243124824", <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;"r-switch" : "MTN" <br>
+                    } <br><br>
+
+
+                    //Request Body For VODAFONE transaction <br>
+                    { <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;"amount" : "000000000200", <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;"processing_code" : "000200", <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;"transaction_id" : "000000000000", <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;"desc" : "Mobile Money Payment Test", <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;"merchant_id" : "Your Merchant ID", <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;"subscriber_number" : "233500124824", <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;"voucher_code" : "0215", <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;"r-switch" : "VDF" <br>
+                    }
+                </div>
+                <div class="secondary_1_1">
+                    &nbsp;&nbsp;&nbsp;&nbsp;{ <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"transaction_id":"000000000000", <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"status": "approved", <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"code": "000",
+                    "reason": "Transaction successful!"<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;} <br>
+                </div>
+
+                <h1>API Keys</h1>
+                <p class="sub-text" style="margin-top: 30px;">
+                    This section describes what API keys are and how to retrieve them.
+                </p>
+                <p class="line"></p>
+                <p class="sub-text" style="margin-top: 30px;">
+                    Theteller authenticates your API requests using your account's API keys. If you do not include your
+                    key when making an API request, or use one that is incorrect or outdated, Theteller returns an
+                    error. <br>
+
+                    All API requests exist in either test or live mode, and one mode cannot be manipulated by data in
+                    the other. To get your test api keys you need to sign up here
+                </p>
+
+                <img src="dashboard.png" alt="dashboard" width="1005" height="605"
+                    style="margin-left: 60px; border-radius: 10px;">
+
+                <p class="sub-text" style="margin-top: 30px;">
+                    Only use your test API keys for testing and development.
+                </p>
+                <p class="sub-text" style="margin-top: 30px;">
+                    Only use your test API keys for testing and development.
+                </p>
+                <p class="sub-text" style="margin-top: 30px;">
+                    If you cannot see your API keys in the Dashboard, this means you do not have access to them, kindly
+                    contact your Theteller support. </p>
+
+                <h4 style="margin-left:60px">Test and Live modes</h4>
+
+                <p class="sub-text" style="margin-top: 30px;">
+                    The test and live modes function almost identically, with a few necessary differences:</p>
+                <ol class="sub-text" style="list-style:none;">
+                    <li value="">1. Copy the Theteller Inline JS script and paste on your site.</li>
+                </ol>
+
+                <h1>API Keys</h1>
+                <p class="sub-text" style="margin-top: 30px;">
+                    This page lists all plugins available on TheTeller. </p>
+                <p class="sub-text" style="margin-top: 30px;">
+                    Plugins make integrations on Theteller a lot faster. Here are the plugins we have at the moment,
+                    please feel free to contact <code>ps_dev@payswitch.com.gh</code> if you need help developing a
+                    plugin or you've developed a plugin and want it to be listed here. </p>
+
+                <h4 style="margin-left:60px">Wordpress</h4>
+                <p class="sub-text" style="margin-top: 30px;">
+                    <strong>Woocommerce:</strong> <a href="https://woocommerce.com/">Woocommerce</a>is an eCommerce
+                    store plugin for selling both digital and physical products. <br> <a
+                        href="https://github.com/realnaspter/woocommerce-theteller-payment-gateway"></a>Download
+                    Theteller WooCommerce Plugin</p>
+
+                <h4 style="margin-left:60px">Magento</h4>
+                <p class="sub-text" style="margin-top: 30px;">
+                    Woocommerce is an eCommerce store plugin for selling both digital and physical products. <br> <a
+                        href="https://github.com/asareStephen/Theteller"></a>Download Theteller Magento Plugin</p>
+
+                <h4 style="margin-left:60px">Mobile SDK</h4>
+                <p class="sub-text" style="margin-top: 30px;">
+                    Theteller android sdk allows you integrate payment faster into you android mobile app.<br> <a
+                        href="https://github.com/apeatu/theteller-android-sdk"></a>Download Theteller Android SDK</p>
+
+                <h4 style="margin-left:60px">OpenCart</h4>
+                <p class="sub-text" style="margin-top: 30px;">
+                    OpenCart is an online store management system. It is PHP-based.<br> <a
+                        href="https://github.com/realnaspter/opencart-theteller-payment-gateway"></a>Download Theteller
+                    OpenCart Plugin</p>
+
+                <h1>TheTeller Response codes</h1>
+                <div class="marked-table">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr class="table-head">
+                                <th align="center" class="table-size" style="padding: 10px; ">Code</th>
+                                <th align="center" class="table-size" style="padding: 10px; ">Reason</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="stripe_1">
+                                <td align="center" class="table-size" style="padding:10px">000</td>
+                                <td align="center" class="table-size" style="padding:10px">Transaction successful</td>
+                            </tr>
+                            <tr class="stripe_2">
+                                <td align="center" class="table-size" style="padding:10px">101</td>
+                                <td align="center" class="table-size" style="padding:10px">Insufficient funds in wallet
+                                </td>
+                            </tr>
+                            <tr class="stripe_1">
+                                <td align="center" class="table-size" style="padding:10px">101,105</td>
+                                <td align="center" class="table-size" style="padding:10px">Insufficient funds in wallet
+                                </td>
+                            </tr>
+                            <tr class="stripe_2">
+                                <td align="center" class="table-size" style="padding:10px">100</td>
+                                <td align="center" class="table-size" style="padding:10px">Transaction not permitted to
+                                    cardholder
+                                </td>
+                            </tr>
+                            <tr class="stripe_1">
+                                <td align="center" class="table-size" style="padding:10px">102</td>
+                                <td align="center" class="table-size" style="padding:10px">Number not registered for
+                                    mobile money
+                                </td>
+                            </tr>
+                            <tr class="stripe_2">
+                                <td align="center" class="table-size" style="padding:10px">103</td>
+                                <td align="center" class="table-size" style="padding:10px">Wrong PIN or transaction
+                                    timed out
+                                </td>
+                            </tr>
+                            <tr class="stripe_1">
+                                <td align="center" class="table-size" style="padding:10px">104</td>
+                                <td align="center" class="table-size" style="padding:10px">Transaction declined or
+                                    terminated
+                                </td>
+                            </tr>
+                            <tr class="stripe_2">
+                                <td align="center" class="table-size" style="padding:10px">105</td>
+                                <td align="center" class="table-size" style="padding:10px">Invalid amount or general
+                                    failure. Try
+                                    changing
+                                    transaction id</td>
+                            </tr>
+                            <tr class="stripe_1">
+                                <td align="center" class="table-size" style="padding:10px">111</td>
+                                <td align="center" class="table-size" style="padding:10px">Payment request sent
+                                    successfully
+                                </td>
+                            </tr>
+                            <tr class="stripe_2">
+                                <td align="center" class="table-size" style="padding:10px">107</td>
+                                <td align="center" class="table-size" style="padding:10px">USSD is busy, please try
+                                    again later
+                                </td>
+                            </tr>
+                            <tr class="stripe_1">
+                                <td align="center" class="table-size" style="padding:10px">114</td>
+                                <td align="center" class="table-size" style="padding:10px">Invalid Voucher code
+                                </td>
+                            </tr>
+                            <tr class="stripe_2">
+                                <td align="center" class="table-size" style="padding:10px">200</td>
+                                <td align="center" class="table-size" style="padding:10px">VBV Required
+                                </td>
+                            </tr>
+                            <tr class="stripe_1">
+                                <td align="center" class="table-size" style="padding:10px">100</td>
+                                <td align="center" class="table-size" style="padding:10px">Transaction Failed or
+                                    Declined
+                                </td>
+                            </tr>
+                            <tr class="stripe_2">
+                                <td align="center" class="table-size" style="padding:10px">600</td>
+                                <td align="center" class="table-size" style="padding:10px">Access Denied
+                                </td>
+                            </tr>
+                            <tr class="stripe_1">
+                                <td align="center" class="table-size" style="padding:10px">979</td>
+                                <td align="center" class="table-size" style="padding:10px">Access Denied. Invalid
+                                    Credential
+                                </td>
+                            </tr>
+                            <tr class="stripe_2">
+                                <td align="center" class="table-size" style="padding:10px">909</td>
+                                <td align="center" class="table-size" style="padding:10px">Duplicate Transaction ID.
+                                    Transaction ID
+                                    must be
+                                    unique
+                                </td>
+                            </tr>
+                            <tr class="stripe_1">
+                                <td align="center" class="table-size" style="padding:10px">999</td>
+                                <td align="center" class="table-size" style="padding:10px">Access Denied. Merchant ID is
+                                    not set
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+
+                <h1>TheTeller Response codes</h1>
+                <div class="marked-table">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr class="table-head">
+                                <th align="center" style="padding: 10px; ">Bank Code</th>
+                                <th align="center" style="padding: 10px; ">Bank Name</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="stripe_1">
+                                <td align="center" style="padding:10px; ">SCH</td>
+                                <td align="center" style="padding:10px; ">STANDARD CHARTERED BANK
+                                </td>
+                            </tr>
+                            <tr class="stripe_2">
+                                <td align="center" style="padding:10px; ">ABG</td>
+                                <td align="center" style="padding:10px; ">ABSA BANK GHANA LIMITED
+                                </td>
+                            </tr>
+                            <tr class="stripe_1">
+                                <td align="center" style="padding:10px; ">GCB</td>
+                                <td align="center" style="padding:10px; ">GCB BANK LIMITED
+                                </td>
+                            </tr>
+                            <tr class="stripe_2">
+                                <td align="center" style="padding:10px; ">NIB</td>
+                                <td align="center" style="padding:10px; ">NATIONAL INVESTMENT BANK
+
+                                </td>
+                            </tr>
+                            <tr class="stripe_1">
+                                <td align="center" style="padding:10px; ">ADB</td>
+                                <td align="center" style="padding:10px; ">AGRICULTURAL DEVELOPMENT BANK
+                                </td>
+                            </tr>
+                            <tr class="stripe_2">
+                                <td align="center" style="padding:10px; ">UMB</td>
+                                <td align="center" style="padding:10px; ">UNIVERSAL MERCHANT BANK
+                                </td>
+                            </tr>
+                            <tr class="stripe_1">
+                                <td align="center" style="padding:10px; ">RBL</td>
+                                <td align="center" style="padding:10px; ">REPUBLIC BANK LIMITED
+                                </td>
+                            </tr>
+                            <tr class="stripe_2">
+                                <td align="center" style="padding:10px; ">ZEN </td>
+                                <td align="center" style="padding:10px; ">ZENITH BANK GHANA LTD
+                                </td>
+                            </tr>
+                            <tr class="stripe_1">
+                                <td align="center" style="padding:10px; ">ECO</td>
+                                <td align="center" style="padding:10px; ">ECOBANK GHANA LTD
+                                </td>
+                            </tr>
+                            <tr class="stripe_2">
+                                <td align="center" style="padding:10px; ">CAL</td>
+                                <td align="center" style="padding:10px; ">CAL BANK LIMITED
+                                </td>
+                            </tr>
+                            <tr class="stripe_1">
+                                <td align="center" style="padding:10px; ">PRD</td>
+                                <td align="center" style="padding:10px; ">PRUDENTIAL BANK LTD
+                                </td>
+                            </tr>
+                            <tr class="stripe_2">
+                                <td align="center" style="padding:10px; ">STB</td>
+                                <td align="center" style="padding:10px; ">STANBIC BANK
+                                </td>
+                            </tr>
+                            <tr class="stripe_1">
+                                <td align="center" style="padding:10px; ">GTB</td>
+                                <td align="center" style="padding:10px; ">GUARANTY TRUST BANK
+                                </td>
+                            </tr>
+                            <tr class="stripe_2">
+                                <td align="center" style="padding:10px; ">UBA</td>
+                                <td align="center" style="padding:10px; ">UNITED BANK OF AFRICA
+                                </td>
+                            </tr>
+                            <tr class="stripe_1">
+                                <td align="center" style="padding:10px; ">ACB</td>
+                                <td align="center" style="padding:10px; ">ACCESS BANK LTD
+                                </td>
+                            </tr>
+                            <tr class="stripe_2">
+                                <td align="center" style="padding:10px; ">CBG</td>
+                                <td align="center" style="padding:10px; ">CONSOLIDATED BANK GHANA
+                                </td>
+                            </tr>
+                            <tr class="stripe_1">
+                                <td align="center" style="padding:10px; ">FNB</td>
+                                <td align="center" style="padding:10px; ">FIRST NATIONAL BANK
+                                </td>
+                            </tr>
+                            <tr class="stripe_2">
+                                <td align="center" style="padding:10px; ">UNL</td>
+                                <td align="center" style="padding:10px; ">UNITY LINK
+                                </td>
+                            </tr>
+                            <tr class="stripe_1">
+                                <td align="center" style="padding:10px; ">FDL</td>
+                                <td align="center" style="padding:10px; ">FIDELITY BANK LIMITED
+                                </td>
+                            </tr>
+                            <tr class="stripe_2">
+                                <td align="center" style="padding:10px; ">SIS</td>
+                                <td align="center" style="padding:10px; ">SERVICES INTEGRITY SAVINGS & LOANS
+                                </td>
+                            </tr>
+                            <tr class="stripe_1">
+                                <td align="center" style="padding:10px; ">BOA</td>
+                                <td align="center" style="padding:10px; ">BANK OF AFRICA
+                                </td>
+                            </tr>
+                            <tr class="stripe_2">
+                                <td align="center" style="padding:10px; ">DFL</td>
+                                <td align="center" style="padding:10px; ">DALEX FINANCE AND LEASING COMPANY
+                                </td>
+                            </tr>
+                            <tr class="stripe_1">
+                                <td align="center" style="padding:10px; ">FBO</td>
+                                <td align="center" style="padding:10px; ">FIRST BANK OF NIGERIA
+                                </td>
+                            </tr>
+                            <tr class="stripe_2">
+                                <td align="center" style="padding:10px; ">GHL</td>
+                                <td align="center" style="padding:10px; ">GHL Bank
+                                </td>
+                            </tr>
+                            <tr class="stripe_1">
+                                <td align="center" style="padding:10px; ">BOG</td>
+                                <td align="center" style="padding:10px; ">BANK OF GHANA
+                                </td>
+                            </tr>
+                            <tr class="stripe_2">
+                                <td align="center" style="padding:10px; ">FAB</td>
+                                <td align="center" style="padding:10px; ">FIRST ATLANTIC BANK
+                                </td>
+                            </tr>
+                            <tr class="stripe_1">
+                                <td align="center" style="padding:10px; ">SSB</td>
+                                <td align="center" style="padding:10px; ">SAHEL - SAHARA BANK (BSIC)
+                                </td>
+                            </tr>
+                            <tr class="stripe_2">
+                                <td align="center" style="padding:10px; ">GMY </td>
+                                <td align="center" style="padding:10px; ">G-MONEY
+                                </td>
+                            </tr>
+                            <tr class="stripe_1">
+                                <td align="center" style="padding:10px; ">APX</td>
+                                <td align="center" style="padding:10px; ">ARB APEX BANK LIMITED
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+
+            </div>
+        </div>
+        <script src="main.js"></script>
+    </div>
+</body>
+
+</html>
